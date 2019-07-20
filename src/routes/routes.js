@@ -61,16 +61,16 @@ class Routes extends Component {
       <HashRouter history={history}>
         <div>
           <Route exact path="/" component={() => (<AppLayout />)} />
-          // <Route exact path="/friends" component={() => (<AppLayout><MyFriends /></AppLayout>)} />
-          // <Route exact path="/chat" component={() => (<Chat />)} />
-          // <Route exact path="/settings" component={() => (<AppLayout><Settings /></AppLayout>)} />
-          //
-          // <Route exact path="/nearby" component={() => (<AppLayout><UsersNearby /></AppLayout>)} />
-          // <Route exact path="/profile" component={() => (<Profile />)} />
         </div>
       </HashRouter>
     )
   }
 }
+// <Route exact path="/friends" component={() => (<AppLayout><MyFriends /></AppLayout>)} />
+// <Route exact path="/chat" component={() => (<Chat />)} />
+// <Route exact path="/settings" component={() => (<AppLayout><Settings /></AppLayout>)} />
+//
+// <Route exact path="/nearby" component={() => (<AppLayout><UsersNearby /></AppLayout>)} />
+// <Route exact path="/profile" component={() => (<Profile />)} />
 
 export default Routes

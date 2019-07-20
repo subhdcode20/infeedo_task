@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Button from '@material-ui/core/Button';
 
-import ItemsList from '../ItemsList';
+import ItemsList from '../ItemList';
 
 function AppLayout () {
   return <div>
