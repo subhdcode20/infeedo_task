@@ -15,7 +15,7 @@ module.exports = {
         path: __dirname + '/dist',
         filename: 'bundle.js',
     },
-    mode: "production",
+    mode: "development",
     module: {
         rules: [
             {
@@ -50,19 +50,18 @@ module.exports = {
         ]
     },
     plugins: [
-        new BundleAnalyzerPlugin(),
-        new UglifyJsPlugin({
-          uglifyOptions: {
-            compress : {
-              dead_code: true,
-              drop_console: true,
-              unused: true
-            }
-          }
-        }),
+        // new UglifyJsPlugin({
+        //   uglifyOptions: {
+        //     compress : {
+        //       dead_code: true,
+        //       drop_console: true,
+        //       unused: true
+        //     }
+        //   }
+        // }),
         new webpack.DefinePlugin({
           'process.env': {
-              NODE_ENV: JSON.stringify('production')
+              NODE_ENV: JSON.stringify('development')
           }
         })
       ]
