@@ -1,0 +1,8 @@
+.cardItemsWrapper {
+    padding: 10%
+}
+
+.cartItem {
+    display: grid;
+    grid-template-columns: 50% 30% 20%;
+}

@@ -10,6 +10,8 @@ import AppLayout from "../components/Applayout";
 // import Settings from '../components/Settings/index';
 // import UsersNearby from '../components/UsersNearby';
 // import Profile from '../components/Profile';
+import Cart from '../components/Cart';
+import OrderHistory from '../components/OrderHistory';
 
 import createBrowserHistory from 'history/createBrowserHistory'
 
@@ -61,6 +63,8 @@ class Routes extends Component {
       <HashRouter history={history}>
         <div>
           <Route exact path="/" component={() => (<AppLayout />)} />
+          <Route exact path="/cart" component={() => (<Cart />)} />
+          <Route exact path="/orderHistory" component={() => (<OrderHistory />)} />
         </div>
       </HashRouter>
     )
