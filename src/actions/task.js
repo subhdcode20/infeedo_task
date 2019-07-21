@@ -10,8 +10,6 @@ export const getItems = (channelid) => {
 }
 
 export const updateOrderItems = ({item, qnt}) => {
-    console.log('updateOrdeItems ', item, qnt );
-    
     return {
         type:'UPDATE_ORDER',
         payload: {

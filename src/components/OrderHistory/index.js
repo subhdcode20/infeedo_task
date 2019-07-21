@@ -21,7 +21,6 @@ const styles = {
 class OrderHistory extends Component {
     render() {
         let {confirmedOrders, classes} = this.props;
-        console.log('OrderHistory ', confirmedOrders);
         return (<div className={Styles.orderHistoryWrapper}>
             {
                 confirmedOrders.length > 0 ?
@@ -60,7 +59,6 @@ class OrderHistory extends Component {
 }
 
 const mapStateToProps = state => {
-	console.log('mapStateToProps OrderHistory ', state);
 	return {
         confirmedOrders: state.task.confirmedOrders || []
 	}

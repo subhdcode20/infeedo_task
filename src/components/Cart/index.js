@@ -30,13 +30,6 @@ class Cart extends Component {
         let {order} = this.props;
         let {orderConfirmed} = this.state;
         let {items = []} = order;
-        console.log('order in cart: ', order)
-
-        // if(orderConfirmed) {
-        //     return (<div>
-        //         <h1>Your order will be delivered in x minutes</h1>
-        //     </div>)
-        // }
 
         let confirmendDailogue = (<Dialog
             open={this.state.orderConfirmed}
@@ -91,7 +84,6 @@ class Cart extends Component {
 }
 
 const mapStateToProps = state => {
-	console.log('mapStateToProps cart ', state);
 	return {
         totalOrderCount: state.task.totalOrderCount,
         order: state.task.order || []

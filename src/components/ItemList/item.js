@@ -10,7 +10,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Add from '@material-ui/icons/Add';
 import Remove from '@material-ui/icons/Remove';
 
-import {r} from '../../actions/task';
 import Styles from './styles.css';
 
 const styles = {
@@ -19,7 +18,6 @@ const styles = {
       margin: 'auto'
     },
     media: {
-      // ⚠️ object-fit is not supported by IE11.
       objectFit: 'cover',
     },
   };
@@ -67,7 +65,7 @@ function Item({item, classes, updateOrder}) {
             {item.ingredients}
           </Typography>
           <Typography component="p">
-            {item.rating}  {item.currency} {item.price}
+            {item.rating}⭐  -  {item.currency} {item.price}
           </Typography>
         </CardContent>
         <CardActions>

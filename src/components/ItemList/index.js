@@ -88,7 +88,7 @@ class ItemsList extends Component {
     let {search, anchorEl, showSearchResults, filterOptions, filterSelected} = this.state
 
     if(showSearchResults) items = searchResults;
-    console.log('itemlist render ', items, showSearchResults, searchResults)
+    
     return (<div>
       <div className={Styles.searchWrapper}>
         <div>
@@ -146,7 +146,6 @@ class ItemsList extends Component {
 }
 
 const mapStateToProps = state => {
-	console.log('mapStateToProps chat ', state);
 	return {
     items: state.task.items,
     searchResults: state.task.searchResults

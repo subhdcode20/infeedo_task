@@ -12,7 +12,7 @@ class Header extends Component {
             <div>
                 <Link to='/cart' style={{textDecoration: 'none'}}>
                     <Button variant="outlined" style={totalOrderCount > 0 ? {backgroundColor: 'green', color: 'white'} : {} }>
-                        Cart{totalOrderCount > 0 && (<span> {totalOrderCount}</span>)}
+                        Cart{totalOrderCount > 0 && (<span>&nbsp;{totalOrderCount}</span>)}
                     </Button>
                 </Link>
                 &nbsp; 
@@ -24,7 +24,6 @@ class Header extends Component {
 }
 
 const mapStateToProps = state => {
-	console.log('mapStateToProps chat ', state);
 	return {
 		totalOrderCount: state.task.totalOrderCount 
 	}
