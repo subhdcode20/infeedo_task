@@ -17,7 +17,7 @@ import Routes from './routes/routes.js'
 ReactDomRender(
   <Provider store={ReduxStore}>
     <div>
-      <Routes />,
+      <Routes />
     </div>
   </Provider>,
   document.getElementById('app')

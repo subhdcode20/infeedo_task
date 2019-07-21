@@ -8,11 +8,13 @@ class Header extends Component {
     render() {
         let {totalOrderCount} = this.props;
         return (<header>
-            <div><span>GroceriesBuy</span></div>
+            <div><Link to='/' style={{textDecoration: 'none'}}><span>GroceriesBuy</span></Link></div>
             <div>
-                <Button variant="outlined" style={totalOrderCount > 0 ? {backgroundColor: 'green', color: 'white'} : {} }>
-                <Link to='/cart' style={{textDecoration: 'none'}}>Cart{totalOrderCount > 0 && (<span> {totalOrderCount}</span>)}</Link>
-                </Button>
+                <Link to='/cart' style={{textDecoration: 'none'}}>
+                    <Button variant="outlined" style={totalOrderCount > 0 ? {backgroundColor: 'green', color: 'white'} : {} }>
+                        Cart{totalOrderCount > 0 && (<span> {totalOrderCount}</span>)}
+                    </Button>
+                </Link>
                 &nbsp; 
                 <Link to='/orderHistory' style={{textDecoration: 'none'}}><Button variant="outlined" >My Orders</Button></Link>
             </div>

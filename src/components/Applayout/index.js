@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import Button from '@material-ui/core/Button';
 
-import ItemsList from '../ItemList';
+import Routes from '../../routes/routes.js';
 import Header from './header';
 import Styles from './styles.css'
 
-function AppLayout () {
+function AppLayout({children}) {
   return <div>
     <Header />
-    <ItemsList />
+    {children}
   </div>
 }
 

@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router'
 import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 import {confirmOrder} from '../../actions/task';
 import Header from '../Applayout/header';
@@ -17,21 +22,42 @@ class Cart extends Component {
         this.props.confirmOrder();
     }
 
+    handleDailogueClose = () => {
+        this.setState({ orderConfirmed: false });
+    };
+
     render() {
-        let {order, invalidAccess} = this.props;
+        let {order} = this.props;
         let {orderConfirmed} = this.state;
         let {items = []} = order;
         console.log('order in cart: ', order)
-        if(invalidAccess) return (<Redirect to='/' />);
 
-        if(orderConfirmed) {
-            return (<div>
-                <h1>Your order will be delivered in x minutes</h1>
-            </div>)
-        }
+        // if(orderConfirmed) {
+        //     return (<div>
+        //         <h1>Your order will be delivered in x minutes</h1>
+        //     </div>)
+        // }
+
+        let confirmendDailogue = (<Dialog
+            open={this.state.orderConfirmed}
+            onClose={this.handleDailogueClose}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+          >
+            <DialogTitle id="alert-dialog-title">Thank you for choosing us!</DialogTitle>
+            <DialogContent>
+              <DialogContentText id="alert-dialog-description">
+                Your order will be delivered in x minutes
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={this.handleDailogueClose} color="primary">
+                Close
+              </Button>
+            </DialogActions>
+          </Dialog>)
 
         return (<div>
-            <Header />
             <div className={Styles.cardItemsWrapper}>
                 {
                     items.length > 0 ?
@@ -48,20 +74,18 @@ class Cart extends Component {
                         <div style={{textAlign: 'right'}}> 
                             <h3>To Pay: Rs {order.totalOrderAmount}</h3>
                         </div>
+                        <center>
+                            <Button size="small" color="primary" onClick={this.handleConfirmOrder}>Confirm order</Button>
+                        </center> 
                     </div>)
                     :
                     (<div>
                         <h2>Your cart is empty!</h2>
-                        <br />
-                        <Button variant="outlined">
-                            <Link to='/' style={{textDecoration: 'none'}}>Home</Link>
-                        </Button>
                     </div>)
                 }
             </div>
-            <Button size="small" color="primary" onClick={this.handleConfirmOrder}>
-                Confirm order
-            </Button>
+            
+            {confirmendDailogue}
         </div>)
     }
 }
@@ -70,8 +94,7 @@ const mapStateToProps = state => {
 	console.log('mapStateToProps cart ', state);
 	return {
         totalOrderCount: state.task.totalOrderCount,
-        order: state.task.order || [],
-        invalidAccess: state.task.order == undefined
+        order: state.task.order || []
 	}
 }
 

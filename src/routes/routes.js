@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {Link, Switch} from 'react-router';
 import {HashRouter, BrowserRouter, Route} from 'react-router-dom';
 
-import AppLayout from "../components/Applayout";
+import ItemsList from '../components/ItemList';
+import Applayout from '../components/Applayout';
 // import MyFriends from '../components/App';
 // import Chat from '../components/Chat';
 // import Login from '../components/Login';
@@ -62,9 +63,9 @@ class Routes extends Component {
     return (
       <HashRouter history={history}>
         <div>
-          <Route exact path="/" component={() => (<AppLayout />)} />
-          <Route exact path="/cart" component={() => (<Cart />)} />
-          <Route exact path="/orderHistory" component={() => (<OrderHistory />)} />
+          <Route exact path="/" component={() => (<Applayout><ItemsList /></Applayout>)} />
+          <Route exact path="/cart" component={() => (<Applayout><Cart /></Applayout>)} />
+          <Route exact path="/orderHistory" component={() => (<Applayout><OrderHistory /></Applayout>)} />
         </div>
       </HashRouter>
     )

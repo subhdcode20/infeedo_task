@@ -21,8 +21,29 @@ export const updateOrderItems = ({item, qnt}) => {
     }
 }
 
+export const setConfirmedOrders = () => {
+    return {
+        type: 'SET_CONFIRMED_ORDERS'
+    }
+}
+
 export const confirmOrder = () => {
     return {
         type: 'CONFIRM_ORDER'
+    }
+}
+
+export const filterItems = (type) => {
+    return {
+        type: 'FILTER_ITEMS',
+        payload: type
+    }
+}
+
+export const searchItems = (val) => {
+    console.log('serachItems action ', val)
+    return {
+        type: 'SEARCH_ITEMS',
+        payload: val
     }
 }

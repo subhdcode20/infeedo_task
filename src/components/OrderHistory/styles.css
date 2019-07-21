@@ -1,0 +1,8 @@
+.orderHistoryWrapper {
+    padding: 20px;
+}
+
+.cartItem {
+    display: grid;
+    grid-template-columns: 50% 30% 20%;
+}

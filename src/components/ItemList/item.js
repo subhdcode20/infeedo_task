@@ -67,7 +67,7 @@ function Item({item, classes, updateOrder}) {
             {item.ingredients}
           </Typography>
           <Typography component="p">
-            {item.currency} {item.price}
+            {item.rating}  {item.currency} {item.price}
           </Typography>
         </CardContent>
         <CardActions>
